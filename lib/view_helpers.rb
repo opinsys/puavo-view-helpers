@@ -1,4 +1,4 @@
-module PuavoForm
+module Puavo
   module ViewHelpers
     def label(*args)
       # Using value by localize if found it
