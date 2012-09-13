@@ -16,6 +16,9 @@ module Puavo
     end
 
     def text_field(*args)
+      if args[2][:object][args[1]].class == Array
+        args[2][:object][args[1]] = args[2][:object][args[1]].join(" ")
+      end
       after_html = field_error_text(args[2][:object], args[1]) if ! args[2].nil? && ! args[2][:object].nil?
       super(*args) + after_html.to_s
     end
